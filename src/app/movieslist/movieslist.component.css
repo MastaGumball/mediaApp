@@ -1,0 +1,16 @@
+.movieContainer{
+    display: flex;
+    
+}
+
+.movieDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+
+}
+
+.title{
+    text-align: center;
+}

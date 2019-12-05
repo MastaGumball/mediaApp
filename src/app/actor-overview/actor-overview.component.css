@@ -1,0 +1,16 @@
+.actorOverviewContainer{
+    
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    justify-content: center;
+    width: 100vw;
+}
+
+.list{
+    width: 20vw;
+}
+
+.actorsDetails{
+    width: 50vh;
+}

@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let actor of listOfActors">
+        <a [routerLink]="['/actors', actor.id]"><p>{{actor.name}}</p></a>
+    </li>
+</ul>

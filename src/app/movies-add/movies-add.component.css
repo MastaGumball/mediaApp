@@ -1,0 +1,16 @@
+.collection{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movieDetails{
+    width: 185px;
+}
+
+.moviePoster{
+    height: 278px;
+}
+
+.moviePoster a{
+    cursor: pointer;
+}
