@@ -11,16 +11,16 @@ import { Movie } from '../movie.model';
 export class MoviesAddComponent implements OnInit {
 
   foundMovies: Movie[];
-  constructor(private movieService:MoviesService, private route:ActivatedRoute) { }
+  constructor(private movieService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
-  searchMovie(searchInput:string){
-    this.movieService.lookupMovie(searchInput).subscribe(result => this.foundMovies=result);
+  searchMovie(searchInput: string) {
+    this.movieService.lookupMovie(searchInput).subscribe(result => this.foundMovies = result);
   }
 
-  addMovie(id:string){
+  addMovie(id: string) {
     this.movieService.addMovie(id).subscribe();
   }
 
