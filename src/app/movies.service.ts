@@ -10,25 +10,25 @@ import { Observable } from 'rxjs';
 })
 export class MoviesService {
 
-  url:string = environment.apiUrl;
+  url: string = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) { }
 
-  getMovie(id:string):Observable<Movie>{
-    return this.httpClient.get<Movie>(this.url+"/"+id);
+  getMovie(id: string): Observable<Movie> {
+    return this.httpClient.get<Movie>(this.url + '/' + id);
   }
 
-  getMovies():Observable<Movie[]>{
+  getMovies(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(this.url);
   }
 
-  lookupMovie(title: string):Observable<Movie[]>{
-    return this.httpClient.get<Movie[]>(this.url+"/search", {
-      params: new HttpParams().set("title", title)
-    })
+  lookupMovie(title: string): Observable<Movie[]> {
+    return this.httpClient.get<Movie[]>(this.url + '/search', {
+      params: new HttpParams().set('title', title)
+    });
   }
 
-  addMovie(onlineId: string):Observable<Movie>{
+  addMovie(onlineId: string): Observable<Movie> {
     return this.httpClient.post<Movie>(this.url, {
       apiId: onlineId,
     });

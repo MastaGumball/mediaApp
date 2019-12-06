@@ -1,19 +1,25 @@
-<div>
-        <input [(ngModel)]="searchInput" name="search">
+<form #searchForm="ngForm"
+      (ngSubmit)="searchMovie(searchForm)" novalidate>
+  <input #title="ngModel"
+         type="text"
+         name="title"
+         [class.invalid]="searchForm.invalid && searchForm.pristine && searchForm.touched"
+         ngModel
+         required
+         minlength="2">
+  <p *ngIf="title.errors?.required && title.touched">Please give us a movie title</p>
+  <p *ngIf="title.errors?.minlength">Current length must be at least 2</p>
 
- <button class="btn" (click)="searchMovie(searchInput)">Search</button></div>
+  <button [disabled]="!searchForm.valid" type="submit" class="btn">Search</button>
+</form>
 
 <ul class="collection">
   <li *ngFor="let movie of foundMovies" class="movieContainer">
-            <div class="moviePoster">
-                  <a (click)="addMovie(movie.onlineId)">
-                    <img [src]="movie.poster" onerror="this.src='https://www.sciencealert.com/images/2019-12/processed/CatsHaveFacialExpressionsButHardToRead_600.jpg'" [alt]="movie.title"  />
-                  </a>
-            </div>
-            <div class="movieDetails">
+   <media-movie [movie]="movie" (selected)="addMovie($event.id)"></media-movie>
+    <div class="movieDetails">
                     <span class="title">
                         <h6>{{movie.title}}</h6>
-                    </span>
-            </div>
+          </span>
+    </div>
   </li>
 </ul>

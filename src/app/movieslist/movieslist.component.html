@@ -1,14 +1,10 @@
 <ul class="collection">
   <li *ngFor="let movie of movieList" class="movieContainer">
-    <div class="moviePoster">
-      <img [src]="movie.poster"
-           onerror="this.src='https://www.sciencealert.com/images/2019-12/processed/CatsHaveFacialExpressionsButHardToRead_600.jpg'"
-           [alt]="movie.title"/>
-    </div>
+    <media-movie [movie]="movie" (selected)="goToDetail($event.id)"></media-movie>
     <div class="movieDetails">
       <span class="title"><h6>{{movie.title}}</h6></span>
       <p *ngIf="movie.plot">{{movie.plot}}</p>
     </div>
-    <a class="btn" [routerLink]="['/movies', movie.id]">Details</a>
+
   </li>
 </ul>

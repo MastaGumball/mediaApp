@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { MoviesService } from '../movies.service';
-import { Movie } from '../movie.model';
+import {Component, OnInit} from '@angular/core';
+import {MoviesService} from '../movies.service';
+import {Movie} from '../movie.model';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'media-movieslist',
@@ -10,11 +11,16 @@ import { Movie } from '../movie.model';
 export class MovieslistComponent implements OnInit {
 
   movieList: Movie[];
-  constructor(private movieService:MoviesService){}
 
-  ngOnInit(){
-    this.movieService.getMovies().subscribe(Movies => this.movieList=Movies);
+  constructor(private movieService: MoviesService, private router: Router) {
   }
-  
+
+  ngOnInit() {
+    this.movieService.getMovies().subscribe(Movies => this.movieList = Movies);
+  }
+
+  goToDetail(id: string) {
+    this.router.navigate(['/movies', id]);
+  }
 
 }

@@ -13,6 +13,7 @@ import { ActorDetailsComponent } from './actor-details/actor-details.component'
 import {HttpClientModule} from '@angular/common/http';
 import { MoviesAddComponent } from './movies-add/movies-add.component';
 import {FormsModule} from '@angular/forms';
+import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {FormsModule} from '@angular/forms';
     ActorOverviewComponent,
     ActorListComponent,
     ActorDetailsComponent,
-    MoviesAddComponent
+    MoviesAddComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

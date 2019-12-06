@@ -1,0 +1,7 @@
+<div class="moviePoster">
+  <a (click)="selected.emit(movie)">
+    <img [src]="movie.poster"
+         onerror="this.src='https://www.sciencealert.com/images/2019-12/processed/CatsHaveFacialExpressionsButHardToRead_600.jpg'"
+         [alt]="movie.title"/>
+  </a>
+</div>

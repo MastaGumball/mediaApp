@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { MoviesService } from '../movies.service';
 import { ActivatedRoute } from '@angular/router';
 import { Movie } from '../movie.model';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'media-movies-add',
@@ -10,14 +11,17 @@ import { Movie } from '../movie.model';
 })
 export class MoviesAddComponent implements OnInit {
 
+  @ViewChild('searchForm', null) frm: NgForm;
+
   foundMovies: Movie[];
   constructor(private movieService: MoviesService, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
-  searchMovie(searchInput: string) {
-    this.movieService.lookupMovie(searchInput).subscribe(result => this.foundMovies = result);
+  searchMovie(searchInput: NgForm) {
+    console.log('view child form:', this.frm);
+    this.movieService.lookupMovie(searchInput.value.title).subscribe(result => this.foundMovies = result);
   }
 
   addMovie(id: string) {

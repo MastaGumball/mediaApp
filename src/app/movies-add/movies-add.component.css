@@ -1,8 +1,7 @@
 .collection{
     display: grid;
-  width: 100vw;
+  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(185px,0.5fr));
-  grid-template-rows:auto ;
   padding: 1rem;
   grid-auto-flow: row;
   grid-gap: 1rem;
@@ -15,23 +14,4 @@
   align-items: center;
 }
 
-.moviePoster{
-  height: 278px;
-  width: 185px;
 
-
-}
-
-.moviePoster img{
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: transform .2s;
-}
-.moviePoster img:hover{
-transform: scale(1.05);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.moviePoster a{
-    cursor: pointer;
-}
