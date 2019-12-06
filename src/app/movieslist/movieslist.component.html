@@ -2,7 +2,7 @@
         <li *ngFor="let movie of movieList" class="collection-item avatar">
          <div class="movieContainer">
           <div class="moviePoster">
-              <img [src]="movie.poster" [alt]="movie.title" />
+              <img [src]="movie.poster" onerror="this.src='https://www.sciencealert.com/images/2019-12/processed/CatsHaveFacialExpressionsButHardToRead_600.jpg'" [alt]="movie.title" />
           </div>
           <div class="movieDetails">
           <span class="title"><h4>{{movie.title}}</h4></span>
