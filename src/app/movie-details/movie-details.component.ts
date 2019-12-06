@@ -11,8 +11,8 @@ import { Movie } from '../movie.model';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  private movie:Movie;
-  
+  private movie: Movie;
+
   constructor(private route:ActivatedRoute, private movieService:MoviesService) { }
 
   ngOnInit() {
